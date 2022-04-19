@@ -1,0 +1,36 @@
+<template>
+    <lightning-card class="slds-align_absolute-center slds-scrollable">
+    <template if:true={loading}>
+        <div class="slds-is-relative ">
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            Loading: {count}/{finishCount}
+        </div>
+    </template>
+    <lightning-layout >
+        <lightning-layout-item class="slds-p-around_medium">
+            <lightning-input data-id="targetDateInput" type="date" onchange={setTargetDate} name="targetDateInput" label="Select Date" ></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item style="margin-top: 37px;">
+            <lightning-button icon-name="utility:search" label="Search"  title="Search"  onclick={updateTable} ></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-p-left_medium" style="margin-top: 37px;">
+            <lightning-button-icon  icon-name="utility:download"  alternative-text="export main report" title="export" onclick={handleCSVDownLoad} ></lightning-button-icon>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-p-left_medium" style="margin-top: 37px;">
+            <lightning-input data-id="packageToggle" message-toggle-active="Suppressed" message-toggle-inactive="visible" type="toggle" label="Package/System Info" name="packageToggle" onchange={handleToggleChange}></lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+    <div style="height: 500px; border-style: groove;  border-width: 1px; width: fit-content;">
+        <lightning-datatable
+        data-id="recentChanges"
+        key-field="name"
+        columns={recentColumns}
+        column-widths-mode="auto"
+        sorted-by={sortBy}
+        sorted-direction={sortDirection}
+        onsort={doSortingRecent}
+        hide-checkbox-column>
+    </lightning-datatable>
+    </div>
+</lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Compliance MetaData Audit</label>
+    <navType>Standard</navType>
+    <tabs>Data_Classification_Report</tabs>
+    <tabs>Data_Classification_Input</tabs>
+    <tabs>Recent_Changes</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Data_Classification_Analytics_UtilityBar</utilityBar>
+</CustomApplication>

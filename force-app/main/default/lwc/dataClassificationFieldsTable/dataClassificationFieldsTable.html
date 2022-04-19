@@ -1,0 +1,51 @@
+<template>
+    <lightning-card>
+        <lightning-button-icon icon-name="utility:download" alternative-text="export main report" title="export"
+                               onclick={handleCSVDownload}></lightning-button-icon>
+        <div class="slds-p-around_xxx-small"></div>
+        <div style="border-width: 1px;">
+            <table
+                    class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-size_2-of-4"
+                    aria-label="Table containing fields with their classification & compliance information.">
+                <thead>
+                <th scope="col">Name</th>
+                <th scope="col">Classification</th>
+                <th scope="col">Compliance Group</th>
+                </thead>
+                <tbody class="slds-scrollable slds-is-relative">
+                <template for:each={tableData} for:item="item">
+                    <tr key={item.name}>
+                        <td>
+                            <lightning-layout>
+                                <lightning-layout-item>
+                                    <div class="slds-truncate" title={item.name}>
+                                        {item.name}
+                                    </div>
+                                </lightning-layout-item>
+
+                                <lightning-layout-item class="slds-p-left_xxx-small">
+                                    <p>
+                                        <lightning-formatted-url value={item.navUrl} tooltip="Edit Field Metadata"
+                                                                 label="(view)"
+                                                                 target={item.navUrl}></lightning-formatted-url>
+                                    </p>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </td>
+                        <td>
+                            <div class="slds-truncate" title={item.classification}>
+                                {item.classification}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate" title={item.complianceGroup}>
+                                {item.complianceGroup}
+                            </div>
+                        </td>
+                    </tr>
+                </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>

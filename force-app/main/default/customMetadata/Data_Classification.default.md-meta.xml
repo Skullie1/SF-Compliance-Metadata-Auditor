@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>default</label>
+    <protected>false</protected>
+    <values>
+        <field>Omitted_Fields__c</field>
+        <value xsi:type="xsd:string">[&quot;CreatedBy&quot;,&quot;CreatedDate&quot;,&quot;DeveloperName&quot;,&quot;Id&quot;,&quot;IsDeleted&quot;,&quot;LastModifiedBy&quot;,&quot;LastModifiedDate&quot;,&quot;LastModifiedDateBy&quot;,&quot;LastViewedDate&quot;,&quot;MasterLabel&quot;,&quot;MasterRecordId&quot;,&quot;Name&quot;,&quot;NamespacePrefix&quot;,&quot;Owner&quot;,&quot;RecordVisibility&quot;,&quot;SystemModstamp&quot;,&quot;UserRecordAccess&quot;]</value>
+    </values>
+    <values>
+        <field>reportable_entity_json__c</field>
+        <value xsi:type="xsd:string">[&quot;Account&quot;,&quot;Case&quot;,&quot;Lead&quot;]</value>
+    </values>
+</CustomMetadata>

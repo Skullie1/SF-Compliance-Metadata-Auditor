@@ -1,0 +1,61 @@
+<template>
+    <lightning-card class="slds-align_absolute-center">
+        <template if:true={loading}>
+            <div class="slds-is-relative">
+                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+            </div>
+        </template>
+        <lightning-tabset>
+            <lightning-tab label="Report Input">
+                <lightning-button class="slds-p-around_x-small" data-id="save" label="Save" icon-name="utility:save"
+                                  onclick={handleSave}></lightning-button>
+                <lightning-button class="slds-p-around_x-small" data-id="standard" label="Select Standard Objects"
+                                  icon-name="utility:check" onclick={handleSelect}></lightning-button>
+                <lightning-button class="slds-p-around_x-small" data-id="custom" label="Select Custom Objects"
+                                  icon-name="utility:check" onclick={handleSelect}></lightning-button>
+
+                <lightning-dual-listbox
+                        class="slds-p-around_x-small"
+                        name="entities"
+                        data-id="dualInput"
+                        label="Select Entity"
+                        source-label="Available"
+                        selected-label="Selected"
+                        field-level-help="These entities will be processed in classification report."
+                        options={options}
+                        value={selectedEntityNames}
+                        onchange={handleSelectedEntitiesChange}>
+                </lightning-dual-listbox>
+            </lightning-tab>
+            <lightning-tab label="Field Omit List">
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <div class="slds-p-around_medium lgc-bg">
+                            <lightning-input data-id="OmittedField" type="text" label="Add Field To Omit In Report"
+                                             placeholder="Omitted Field"></lightning-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item style=" margin-top: 28px;" class="slds-p-around_x-small">
+                        <lightning-button data-id="addBtn" label="Add To List" icon-name="utility:add"
+                                          onclick={handleAddOmittedField}></lightning-button>
+                    </lightning-layout-item>
+                    <lightning-layout-item data-id="removeBtn" onclick={handleRemoveOmittedFields}
+                                           style=" margin-top: 28px;" class="slds-p-around_x-small">
+                        <lightning-button label="Remove From List" icon-name="utility:delete"></lightning-button>
+                    </lightning-layout-item>
+                    <lightning-layout-item style=" margin-top: 28px;" class="slds-p-around_x-small">
+                        <lightning-button label="Save" onclick={handleSave} icon-name="utility:save"></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <div>
+                    <lightning-datatable
+                            data-id="omittedTable"
+                            key-field="fieldName"
+                            data={omittedList}
+                            columns={columns}
+                    ></lightning-datatable>
+                </div>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

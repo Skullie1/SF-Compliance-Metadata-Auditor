@@ -1,0 +1,94 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@Skullie1 
+Skullie1
+/
+Data-Classification-App
+Private
+Code
+Issues
+2
+Pull requests
+Actions
+Projects
+Security
+Insights
+Settings
+Data-Classification-App/manifest/package.xml
+@Skullie1
+Skullie1 :)
+Latest commit 9b68eab 2 days ago
+ History
+ 1 contributor
+52 lines (52 sloc)  1.56 KB
+   
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>DataClassificationMock</members>
+		<members>DataClassificationReportController</members>
+		<members>DataClassificationReportControllerTST</members>
+		<members>MetadataDML</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>Data_Classification_Analytics</members>
+		<name>CustomApplication</name>
+	</types>
+	<types>
+		<members>Data_Classification__mdt.reportable_entity_json__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Data_Classification.default</members>
+		<name>CustomMetadata</name>
+	</types>
+	<types>
+		<members>Data_Classification__mdt</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>Data_Classification_Input</members>
+		<members>Data_Classification_Report</members>
+		<members>Recent_Changes</members>
+		<name>CustomTab</name>
+	</types>
+	<types>
+		<members>Data_Classification_Analytics_UtilityBar</members>
+		<members>Data_Classification_Input</members>
+		<members>Data_Classification_Report</members>
+		<members>Recent_Changes</members>
+		<name>FlexiPage</name>
+	</types>
+	<types>
+		<members>dataClassificationFieldsTable</members>
+		<members>dataClassificationRecentChanges</members>
+		<members>dataClassificationReport</members>
+		<members>dataClassificationReportInput</members>
+		<members>exportUtil</members>
+		<name>LightningComponentBundle</name>
+	</types>
+	<types>
+		<members>Data_Classification_App</members>
+		<name>PermissionSet</name>
+	</types>
+	<version>53.0</version>
+</Package>
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete

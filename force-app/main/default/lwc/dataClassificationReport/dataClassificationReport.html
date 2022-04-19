@@ -1,0 +1,99 @@
+<template>
+    <lightning-card class="slds-align_absolute-center slds-scrollable">
+        <template if:true={loading}>
+            <div class="slds-is-relative ">
+                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+                Calculating And Loading: {finalLoadCount} rows
+            </div>
+        </template>
+        <lightning-layout>
+            <lightning-layout-item class="slds-p-top_x-large">
+                <lightning-button-icon class="slds-p-left_medium " icon-name="utility:refresh"
+                                       alternative-text="refresh" title="refresh"
+                                       onclick={refresh}></lightning-button-icon>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-p-top_x-large">
+                <template if:true={showExport}>
+                    <lightning-button-icon class="slds-p-left_medium " icon-name="utility:download"
+                                           alternative-text="export main report" title="export"
+                                           onclick={handleCSVDownLoad}></lightning-button-icon>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item class="slds-p-around_x-small">
+                <div style="height: 500px; border-style: groove;  border-width: 1px;">
+                    <lightning-datatable
+                            data-id="reportTable"
+                            key-field="name"
+                            columns={columns}
+                            default-sort-direction={defaultSortDirection}
+                            sorted-by={sortBy}
+                            sorted-direction={sortDirection}
+                            onsort={doSortingMain}
+                            onrowaction={handleRowAction}
+                            hide-checkbox-column>
+                    </lightning-datatable>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-p-around_x-small">
+                <div style="overflow-y: auto; max-height: 500px;">
+                    <lightning-accordion
+                            data-id="accordian"
+                            allow-multiple-sections-open
+                            class="example-accordion"
+                            active-section-name={activeSections}>
+                        <template for:each={sectionData} for:item="item">
+                            <lightning-accordion-section data-id={item.name} key={item.name} name={item.name}
+                                                         label={item.name}>
+                                <div id={item.name} style="border-width: 1px;">
+                                    <c-data-classification-fields-table table-data={item.fieldData}
+                                                                        object-name={item.name}></c-data-classification-fields-table>
+                                </div>
+                            </lightning-accordion-section>
+                        </template>
+                    </lightning-accordion>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-p-around_x-small" style=" margin-top: -52px;">
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <lightning-combobox
+                                data-id="searchBox"
+                                name="searchFor"
+                                label="Search For"
+                                placeholder="Select Data Classification"
+                                options={options}
+                                onchange={handleFind}>
+                        </lightning-combobox>
+                    </lightning-layout-item>
+                    <lightning-layout-item style=" margin-top: 12px;" class="slds-p-around_x-small">
+                        <template if:true={showFindTable}>
+                            <lightning-button-icon class="slds-p-left_medium " icon-name="utility:download"
+                                                   alternative-text="export main report" title="export"
+                                                   onclick={downloadCSVFilterFile}></lightning-button-icon>
+                        </template>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <template if:true={showFindTable}>
+                    <div style="height: 500px; border-style: groove;  border-width: 1px; width: fit-content;">
+                        <lightning-datatable
+                                data-id="findTable"
+                                key-field="name"
+                                data={findData}
+                                columns={findColumns}
+                                sorted-by={sortBy}
+                                sorted-direction={sortDirection}
+                                onsort={doSortingFind}
+                                hide-checkbox-column>
+                        </lightning-datatable>
+                    </div>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item class="slds-size_2-of-3 slds-p-around_x-small" style=" margin-top: 59px;">
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
