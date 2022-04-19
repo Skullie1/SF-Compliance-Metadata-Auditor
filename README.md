@@ -1,6 +1,8 @@
 # Salesforce Data Classification App: Install Steps
+
 What features does this provide?
- <l>
+<l>
+
   <li>Audit on Org’s metadata Security Classification</li>
  <li>Ability to export to csv format</li>
  <li>Ability to target specific entities in report.</li>
@@ -21,8 +23,8 @@ What features does this provide?
 </l>
   <br>
 
-
 New Connected App
+
 1. Go to Setup > Apps > App Manager
 
 2. Click on New Connected App button
@@ -33,11 +35,12 @@ New Connected App
 
 5. Give a Dummy URl for now. We'll update this in just a while
 
-8. Select the 'full' and 'refresh_token' oAuth scopes
+6. Select the 'full' and 'refresh_token' oAuth scopes
 
-9. Save the Connected App
+7. Save the Connected App
 
 New Auth Provider
+
 1. Go to Setup > Identity > Auth. Providers
 
 2. Click on New button
@@ -55,10 +58,10 @@ New Auth Provider
 8. Copy the Callback URL from the Salesforce Configuration section
 
 Update Connected App
+
 1. Edit the Connected App, and paste the Callback URl just copied from Auth Provider
 
-New Named Credential
-0. Wait for 10 minutes for the Connected App information to flow to servers, before taking the next steps
+New Named Credential 0. Wait for 10 minutes for the Connected App information to flow to servers, before taking the next steps
 
 1. Go to Setup > Security > Named Credentials.
 
@@ -78,24 +81,9 @@ New Named Credential
 
 9. Select 'Start Authentication Flow on Save' and click Save
 
-9. Saving the Named Credential will start an Authentication Flow for this Org. Login once as a SYSTEM ADMIN
-<br/>
+10. Saving the Named Credential will start an Authentication Flow for this Org. Login once as a SYSTEM ADMIN
+    <br/>
 
 ![Screen Shot 2022-02-14 at 1 38 39 PM](https://user-images.githubusercontent.com/83821286/153934497-b84300f4-c1d3-41ce-ac04-bb322e138090.png)
 ![Screen Shot 2022-02-14 at 1 19 05 PM](https://user-images.githubusercontent.com/83821286/153931360-636fc543-e869-4323-a110-33d1c9ed9642.png)
 ![image](https://user-images.githubusercontent.com/83821286/154959257-53fa7f5d-8112-4737-bc9d-2ce27bd8d608.png)
-
-## How Do You Plan to Deploy Your Changes?
-
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
