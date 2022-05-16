@@ -1,0 +1,33 @@
+<template >
+    <template  if:true={toggleModal}>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-modal_small">
+        <div class="slds-modal__container">
+          <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={handleModalToggle}></button>
+          <div class="slds-modal__header">
+            <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{headerTitle}</h1>
+          </div>
+          <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <div style="height: 500px; border-style: groove;  border-width: 1px;">
+                <lightning-datatable
+                        data-id="fieldsDataTable"
+                        key-field="name"
+                        data={data}
+                        columns={columns}
+                        sorted-by={sortBy}
+                        sorted-direction={sortDirection}
+                        onsort={doSorting}
+                        hide-checkbox-column>
+                </lightning-datatable>
+            </div>
+         </div>
+          <div class="slds-modal__footer">
+            <lightning-button-icon class="slds-p-medium " icon-name="utility:download"
+            alternative-text="export to csv" title="export"
+            onclick={handleCSVDownLoad}></lightning-button-icon>
+            <button class="slds-button slds-button_neutral" aria-label="close" onclick={handleModalToggle}>Close</button>
+          </div>
+        </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+</template>

@@ -6,8 +6,11 @@
                 Calculating And Loading: {finalLoadCount} rows
             </div>
         </template>
+        <c-fields-modal data-id="fieldModal"></c-fields-modal>
         <lightning-layout>
             <lightning-layout-item class="slds-p-top_x-large">
+
+
                 <lightning-button-icon class="slds-p-left_medium " icon-name="utility:refresh"
                                        alternative-text="refresh" title="refresh"
                                        onclick={refresh}></lightning-button-icon>
@@ -34,25 +37,6 @@
                             onrowaction={handleRowAction}
                             hide-checkbox-column>
                     </lightning-datatable>
-                </div>
-            </lightning-layout-item>
-            <lightning-layout-item class="slds-p-around_x-small">
-                <div style="overflow-y: auto; max-height: 500px;">
-                    <lightning-accordion
-                            data-id="accordian"
-                            allow-multiple-sections-open
-                            class="example-accordion"
-                            active-section-name={activeSections}>
-                        <template for:each={sectionData} for:item="item">
-                            <lightning-accordion-section data-id={item.name} key={item.name} name={item.name}
-                                                         label={item.name}>
-                                <div id={item.name} style="border-width: 1px;">
-                                    <c-data-classification-fields-table table-data={item.fieldData}
-                                                                        object-name={item.name}></c-data-classification-fields-table>
-                                </div>
-                            </lightning-accordion-section>
-                        </template>
-                    </lightning-accordion>
                 </div>
             </lightning-layout-item>
             <lightning-layout-item class="slds-p-around_x-small" style=" margin-top: -52px;">

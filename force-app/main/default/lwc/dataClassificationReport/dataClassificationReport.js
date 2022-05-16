@@ -25,7 +25,8 @@ const findColumns = [
 
 export default class DataClassificationReport extends LightningElement {
 	columns = columns;
-	objectList = [];
+	//this holds info for the datatable
+	@track objectList = [];
 	findOptions = [];
 	findData = [];
 	findColumns = findColumns;
@@ -37,7 +38,6 @@ export default class DataClassificationReport extends LightningElement {
 	showExport = false;
 	activeSections = []; //this controls which sections are expanded
 	csvData = [];
-	sectionData = [];
 	sfdcBaseURL = window.location.origin;
 
 	@track sortBy;
@@ -158,9 +158,8 @@ export default class DataClassificationReport extends LightningElement {
 
 	handleLoadCompleted() {
 		this.template.querySelector('[data-id=searchBox]').options = this.handleOptions();
-		this.sectionData = this.objectList.sort((a, b) =>
-			((a.name > b.name) ? 1 : (a.name === b.name) ? ((a.name > b.name) ? 1 : -1) : -1));
-		this.template.querySelector(`[data-id="reportTable"]`).data = this.sectionData;
+		this.template.querySelector(`[data-id="reportTable"]`).data =  this.objectList.sort((a, b) =>
+		((a.name > b.name) ? 1 : (a.name === b.name) ? ((a.name > b.name) ? 1 : -1) : -1));
 		this.loading = false;
 		this.showExport = true;
 	}
@@ -185,7 +184,7 @@ export default class DataClassificationReport extends LightningElement {
 		if (filterValue === 'unclass') {
 			filterValue = null;
 		}
-		let ourData = JSON.parse(JSON.stringify(this.sectionData))
+		let ourData = JSON.parse(JSON.stringify(this.objectList))
 		let tempObj = [];
 		for (const prop in ourData) {
 			for (const prop1 in ourData[prop].fieldData) {
@@ -199,10 +198,23 @@ export default class DataClassificationReport extends LightningElement {
 	}
 
 	handleSelectOfSection(name) {
-		this.activeSections = [name];
-		const element = this.template.querySelector('[data-id="' + name + '"]');
-		element.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+		let modal = this.template.querySelector(`[data-id="fieldModal"]`);
+		modal.handleModalToggle();
+		modal.setDataTable(this.handleModalData(name));
+		modal.headerTitle = name + ' Fields';
 
+		//this.activeSections = [name];
+		//const element = this.template.querySelector('[data-id="' + name + '"]');
+		//element.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+
+	}
+	handleModalData(name){
+
+		for (const prop in this.objectList) {
+			if(this.objectList[prop].name === name){
+				return this.objectList[prop].fieldData;
+			}
+		}
 	}
 
 	handleCSVDownLoad() {
