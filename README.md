@@ -1,4 +1,4 @@
-# Salesforce Data Classification App: Install Steps
+# Salesforce-Compliance-Metadata-Auditor: Install Steps
 
 What features does this provide?
 <l>
