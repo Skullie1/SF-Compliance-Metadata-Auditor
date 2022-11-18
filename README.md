@@ -16,7 +16,7 @@ What features does this provide?
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a></li>
   <li>Add permission set Data_Classification_App to user</li>
-  <li>In App launcher, navigate to Data Classification Analytics</li>
+  <li>In App launcher, navigate to Compliance MetaData Audit</li>
   <li>Ensure info on data classisfication input tab is set up</li>
   <li>Navigate to data classification report tab and let report load</li>
   <li>Note the longer loadtime for more entities in report</li>
