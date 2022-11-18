@@ -63,9 +63,9 @@ Update Connected App
 
 New Named Credential 0. Wait for 10 minutes for the Connected App information to flow to servers, before taking the next steps
 
-1. Go to Setup > Security > Named Credentials.
+1. Go to Setup > Security > Named Credentials
 
-2. Click New Named Credential
+2. Click 'New Legacy' in the dropdown next to 'New'
 
 3. Enter Label and Name as 'DataClass_NC'
 
