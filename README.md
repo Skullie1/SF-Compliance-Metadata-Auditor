@@ -88,5 +88,6 @@ New Named Credential 0. Wait for 10 minutes for the Connected App information to
 
 ![image](https://user-images.githubusercontent.com/83821286/207946604-a4dcd7b1-3d78-4a57-a495-cd0dd0f321d5.png)
 
+![image](https://user-images.githubusercontent.com/83821286/207946776-6aef084c-af09-4847-a16f-dec17c59c0fe.png)
 
 ![image](https://user-images.githubusercontent.com/83821286/154959257-53fa7f5d-8112-4737-bc9d-2ce27bd8d608.png)
