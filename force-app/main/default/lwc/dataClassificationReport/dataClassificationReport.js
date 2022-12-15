@@ -137,6 +137,8 @@ export default class DataClassificationReport extends LightningElement {
 				name: fieldData[prop].QualifiedApiName,
 				classification: fieldData[prop].SecurityClassification,
 				complianceGroup: fieldData[prop].ComplianceGroup,
+				description: fieldData[prop].Description,
+				DataType: fieldData[prop].DataType,
 				navUrl: (parentName.includes('__mdt'))
 					?this.sfdcBaseURL+'/lightning/setup/CustomMetadata/page?address=%2F'+ mdtUrl
 					:this.sfdcBaseURL+'/lightning/setup/ObjectManager/'+fieldData[prop].EntityDefinitionId+'/FieldsAndRelationships/'+fieldData[prop].DurableId.split('.')[1]+'/view'
