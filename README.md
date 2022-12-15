@@ -84,6 +84,5 @@ New Named Credential 0. Wait for 10 minutes for the Connected App information to
 10. Saving the Named Credential will start an Authentication Flow for this Org. Login once as a SYSTEM ADMIN
     <br/>
 
-![Screen Shot 2022-02-14 at 1 38 39 PM](https://user-images.githubusercontent.com/83821286/153934497-b84300f4-c1d3-41ce-ac04-bb322e138090.png)
-![Screen Shot 2022-02-14 at 1 19 05 PM](https://user-images.githubusercontent.com/83821286/153931360-636fc543-e869-4323-a110-33d1c9ed9642.png)
+
 ![image](https://user-images.githubusercontent.com/83821286/154959257-53fa7f5d-8112-4737-bc9d-2ce27bd8d608.png)
