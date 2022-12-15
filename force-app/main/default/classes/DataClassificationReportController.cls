@@ -4,7 +4,7 @@ public inherited sharing class DataClassificationReportController {
 	public static String getEntityData(String entityName) {
 		DataClassificationReportController controller = new DataClassificationReportController();
 		List<FieldDefinition> cacheQueryResultFields = [
-				SELECT DeveloperName, QualifiedApiName, ComplianceGroup, SecurityClassification, EntityDefinition.QualifiedApiName, DurableId
+				SELECT DeveloperName, QualifiedApiName, ComplianceGroup, SecurityClassification, EntityDefinition.QualifiedApiName, DurableId, Description, DataType, BusinessStatus
 				FROM FieldDefinition
 				WHERE EntityDefinition.QualifiedApiName = :entityName
 		];
